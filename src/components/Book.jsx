@@ -16,4 +16,10 @@ Book.propTypes = {
     price: protypes.number.isRequired,
 };
 
+Book.defaultProps = {
+    image: 'https://via.placeholder.com/150',
+    title: 'No title',
+    price: 0,
+};
+
 export default Book;
