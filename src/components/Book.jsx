@@ -1,25 +1,26 @@
-import protypes from 'prop-types';
+import PropTypes from "prop-types";
+import img from "../assets/react.svg";
 
 const Book = ({ image, title, price }) => {
-    return (
-        <div>
-            <h2>{title}</h2>
-            <img src={image} alt='' />
-            <p>{price}</p>
-        </div>
-    );
+	return (
+		<div>
+			<h2>{title || "Defaultní název"}</h2>
+			<img src={image || img} alt="" />
+			<p>{price || 1000}</p>
+		</div>
+	);
 };
 
 Book.propTypes = {
-    image: protypes.string.isRequired,
-    title: protypes.string.isRequired,
-    price: protypes.number.isRequired,
+	image: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
 };
 
-Book.defaultProps = {
-    image: 'https://via.placeholder.com/150',
-    title: 'No title',
-    price: 0,
-};
+// Book.defaultProps = {
+// 	image: img,
+// 	title: "No title",
+// 	price: 1000,
+// };
 
 export default Book;
